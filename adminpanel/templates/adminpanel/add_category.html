@@ -1,0 +1,32 @@
+{% extends 'adminpanel/admin_base.html' %}
+{% block title %}
+KidsPark | Add Category
+{% endblock %}
+{% block content %}
+<div class="row m-3">
+    <div class="col-12">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-primary mt-3" value="Add Category"/>
+
+        </form>
+    </div>
+    {% endblock %}
+
+</div>
+    <h2 class="mb-4">Add New Category</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3 row">
+            <label for="category_name" class="col-sm-2 col-form-label">Category Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="category_name" name="category_name" required>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Add Category</button>
+            </div>
+        </div>
+    </form>

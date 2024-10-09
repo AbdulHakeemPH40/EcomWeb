@@ -1,0 +1,10 @@
+{% extends 'home/base.html' %}
+{% block title %}
+<title>EcomWeb | 404 </title>
+{% endblock %}
+
+{% block content %}
+<div class ="row m-5">
+<p> Sorry !!! at this moment you are not authorized to access this page . click <a href="{% url 'sign_in' %}" /> Here </p>
+</div>
+{% endblock%}

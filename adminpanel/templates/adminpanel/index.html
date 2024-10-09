@@ -1,0 +1,25 @@
+{% extends 'adminpanel/admin_base.html' %}
+{% load static %}
+{% block title %} Ecom | AdminHome {% endblock %}
+{% block content %}
+<div class="row m-5">
+  {% for item in products %}
+  <div class="col-md-3 mb-4">
+    <div class="card h-100">
+        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text">Rs.{{ item.price }}</p>
+          <p class="card-text">{{ item.stock }} Available</p>
+          <p class="card-text">Category: {{ item.category.name }}</p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="{% url 'edit_product' item.id %}" class="btn btn-primary">Edit</a>
+          <a href="{% url 'delete_product' item.id %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

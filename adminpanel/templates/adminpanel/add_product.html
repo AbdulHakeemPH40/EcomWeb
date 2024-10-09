@@ -1,0 +1,30 @@
+{% extends 'adminpanel/admin_base.html' %}
+{% load static %}
+{% block title %} Ecom | Add Product {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row m-3">
+        <div class="col-md-8" style="width:350; height: 100;" >
+
+
+            <h2> Create A Products </h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% comment %} {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {{ field.errors }}
+                            
+                        </div>
+                    {% endfor %}     {% endcomment %}
+                    <input type="submit" value="ADD PRODUCT" class="btn btn-primary"/>
+                    
+                </form>
+            </div>
+
+    </div>
+
+</div>
+{% endblock %}

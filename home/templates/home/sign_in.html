@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% block title %}
+KidsPark | Register
+{% endblock %}
+{% block content %}
+
+<div class="row m-5">                
+        <div class="card m-8">      
+                <div class="col-md-6 offset-md-3">
+                <form method ="post">   
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type ="submit" class="btn btn-primary"/>
+                </form>       
+        </div>
+
+        </div>
+</div>
+{% endblock %}
+

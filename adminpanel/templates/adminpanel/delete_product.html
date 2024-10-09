@@ -1,0 +1,14 @@
+{% extends 'adminpanel/admin_base.html' %}
+
+{% block title %} Ecom | Delete Product {% endblock %}
+
+{% block content %}
+<h1> Delete Product </h1>
+<p> Are you Sure want to delete the product "{{ item_delete.name }}"?</p>
+
+<form method ="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete </button>
+    <a href="{% url 'admin_home' %}" class="btn btn-secondary"> Cancel </a>
+</form>
+{% endblock %}
